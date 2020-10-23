@@ -1,3 +1,83 @@
 body{
-  background-color:pink;
+  background-color:rgba(152, 224, 250, 0.947);
+}
+
+.mainDisplayArea{
+  display: block;
+  height: 800px;
+  background-color: rgb(223, 222, 222);
+  position: relative;
+}
+.LapDataDisplayArea{
+/* display:inline-block; */
+background-color: whitesmoke;
+width:200px;
+height:80%;
+margin: 40px 20px 40px; 
+float: left;
+}
+
+.ElapsedTimeDisplayArea{
+  /* display:inline-block; */
+  width: 400px;
+  height: 100px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 50px;
+  float: left;
+  /* left: 300px; */
+  margin-left: 350px;
+  text-align: center;
+  line-height: 100px;
+  box-sizing: border-box;
+  font-size: 30px;
+}
+
+.startTimeDisplayArea{
+/* display:inline-block; */
+  width: 80px;
+  height: 50px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 250px;
+  float: right;
+  /* left: 300px; */
+  margin-left: 150px;
+}
+
+.stopTimeDisplayArea{
+/* display:inline-block; */
+  width: 80px;
+  height: 50px;
+  background-color: whitesmoke;
+  position:absolute;
+  top: 250px;
+  float: right;
+  /* left:500px; */
+  margin-left: 350px;
+  
+}
+
+.resetTimeDisplayArea{
+/* display:inline-block; */
+  width: 80px;
+  height: 50px;
+  background-color: whitesmoke;
+  position:absolute;
+  top: 500px;
+  /* left:250px; */
+  float:left;
+  margin-left:150px;
+  
+}
+.lapTimeDisplayArea{
+/* display:inline-block; */
+  width: 80px;
+  height: 50px;
+  background-color: whitesmoke;
+  position:absolute;
+  top: 500px;
+  /* left:500px; */
+  float: left;
+  margin-left: 350px;
 }
