@@ -3,7 +3,7 @@
 
 //===================Global variables===================
 const interval = 1;
-let timeInS = 0;
+let timeInMS = 0;
 let timer = null;
 let canClick = true;
 let secondsCounter = 0;
@@ -28,20 +28,20 @@ const clickStart = () => {
 
     //use set interval to increase time every second
     timer = setInterval(() => {
-        timeInS += 1;
-        msToHours(timeInS)
+        timeInMS += 1;
+        msToHours(timeInMS)
     }, interval);
 }
 
 //--------------translate ms to seconds to mins to hrs--------------
 const msToHours = (time) => {
 
-    output(timeInS);
+    output(timeInMS);
 
-    if (timeInS >= 1000) {
+    if (timeInMS >= 1000) {
         console.log(`time is less than 1 sec`)
         secondsCounter += 1;
-        timeInS = 0;
+        timeInMS = 0;
         console.log(`secondsCounter is ${secondsCounter}`)
     }
     if (secondsCounter >= 60) {
@@ -57,7 +57,7 @@ const msToHours = (time) => {
         minsCounter = 0;
     }
 
-    output(`${hoursCounter}: ${minsCounter}: ${secondsCounter}: ${timeInS}`)
+    output(`${hoursCounter}: ${minsCounter}: ${secondsCounter}: ${timeInMS}`)
 }
 
 // -----------------click Stop-----------------------------
@@ -71,7 +71,7 @@ const clickStop = () => {
 const clickReset = () => {
 
     //reset time to 0
-    timeInS = 0;
+    timeInMS = 0;
     secondsCounter = 0;
     //reset laps
     storeTime = [];
@@ -90,7 +90,7 @@ const clickLapTime = () => {
     //this is for split timing 
     //capture the current  timing and store it in an object
     let consolidatedTimings = {
-        timeInS,
+        timeInMS,
         secondsCounter,
         minsCounter,
         hoursCounter,
@@ -103,12 +103,12 @@ const clickLapTime = () => {
 
     //display the stored number in the lapDataDisplayArea
     let i = numTimesResetButtonClicked;
-    // lapDataDisplayArea.innerHTML = `${storeTime[i].hoursCounter}:${storeTime[i].minsCounter}: ${storeTime[i].secondsCounter}: ${storeTime[i].timeInS} <br>`
+    // lapDataDisplayArea.innerHTML = `${storeTime[i].hoursCounter}:${storeTime[i].minsCounter}: ${storeTime[i].secondsCounter}: ${storeTime[i].timeInMS} <br>`
 
     let splitTimes = '';
     for (let i = 0; i < numTimesResetButtonClicked; i += 1) {
         // storeTime.push(consolidatedTimings)
-        splitTimes = `${storeTime[i].hoursCounter}:${storeTime[i].minsCounter}: ${storeTime[i].secondsCounter}: ${storeTime[i].timeInS} <br>` + splitTimes;
+        splitTimes = `${storeTime[i].hoursCounter}:${storeTime[i].minsCounter}: ${storeTime[i].secondsCounter}: ${storeTime[i].timeInMS} <br>` + splitTimes;
     }
     lapDataDisplayArea.innerHTML = splitTimes
     numTimesResetButtonClicked += 1;
